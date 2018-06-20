@@ -48,7 +48,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
-
+// 点击url中的链接时候会调用该方法
 - (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation {
     NSLog(@"接收到服务器跳转请求之后调用");
 }
