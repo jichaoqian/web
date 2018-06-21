@@ -69,6 +69,13 @@
     [webView evaluateJavaScript:@"document.title" completionHandler:^(id _Nullable tempTitle, NSError * _Nullable error) {
         NSLog(@"document.title:%@>>>webView title:%@", tempTitle, webView.title);
     }];
+    // 获取页面内容
+    [webView evaluateJavaScript:@"document.body.innerText" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        NSLog(@"%@>>>%@", webView.title, result);
+    }];
+//    [webView evaluateJavaScript:@"document.getElementById('list-container');" completionHandler:^(id _Nullable temp, NSError * _Nullable error) {
+//        NSLog(@"%@>>>%@", temp, webView.title);
+//    }];
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
